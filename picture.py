@@ -33,7 +33,6 @@ class Picture:
   def negative(self):
     """ Devuelve un negativo de la imagen """
     nuevaImagen = []
-    index = 0
     for value in self.img:
       row = []
       for caracter in value:
@@ -41,10 +40,17 @@ class Picture:
       nuevaImagen.append(row)    
     return nuevaImagen
 
+
   def join(self, p):
-    """ Devuelve una nueva figura poniendo la figura del argumento 
-        al lado derecho de la figura actual """
-    return Picture(None)
+    """ Devuelve una nueva figura poniendo la figura del argumento p al lado derecho de la figura actual """
+    nuevaImagen = []
+    index = 0
+    for value in self.img:
+      nuevaImagen.append(value + p.img[index])
+      print(nuevaImagen)
+      index = index + 1
+
+    return nuevaImagen
 
   def up(self, p):
     return Picture(None)
