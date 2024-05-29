@@ -8,7 +8,7 @@ inv = Picture._invColor('.', BLACK)
 print("El color inverso es " , inv)
 
 #prueba del metodo verticalMirror
-draw(Picture.horizontalMirror(knight))
+draw(Picture.negative(knight))
 
 
 
