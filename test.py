@@ -16,6 +16,8 @@ img2 = Picture.join(img2, pawn)
 tab = Picture.verticalRepeat(rock, 4)
 tab2 = Picture.verticalRepeat(rock, 4)
 
+casilla = square
+draw(Picture.under(pawn, casilla))
 draw(Picture.rotate(rock))
 
 

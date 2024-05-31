@@ -65,15 +65,17 @@ class Picture:
 
 
   def under(self, p):
-    """ Devuelve una nueva figura poniendo la figura p  la
+    """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
     nuevaImagen = []
-    #copiar todo p a nueva imange
     for value in self.img:
-      nuevaImagen.append(value[::1])
-    for value in p.img:
-      nuevaImagen.append(value[::1])
-    
+        nuevaImagen.append(list(value))
+
+    for i, value in enumerate(p.img):
+      for j, caracter in enumerate(value):
+        if(nuevaImagen[i][j] == ' '):
+          nuevaImagen[i][j] = caracter
+        
 
     return Picture(nuevaImagen)
     
