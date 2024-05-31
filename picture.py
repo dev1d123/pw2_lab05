@@ -44,36 +44,21 @@ class Picture:
   def join(self, p):
     """ Devuelve una nueva figura poniendo la figura del argumento p al lado derecho de la figura actual """
     nuevaImagen = []
-    lista = []
     index = 0
-    print("El tipo de self es: ", type(self))
-    #si self es de tipo lista!
-    if(isinstance(self, list)):
-      print("Es una lista!!!")
-      
-      for pieza in self:
-        print("Los elementos de self son: ", type(pieza))
-        print(pieza)
-        nuevaImagen.append(pieza)
 
-      nuevaImagen = Picture(nuevaImagen)
+    for value in self.img:
+      nuevaImagen.append(value + p.img[index])
+      index = index + 1
 
-      for value in nuevaImagen.img:
-        lista.append(value + p.img[index])
-        index = index + 1
-      return lista
-    else: #si self es solo una imagen
-      for value in self.img:
-        nuevaImagen.append(value + p.img[index])
-        index = index + 1
-
-    return nuevaImagen
-
+    return Picture(nuevaImagen)
+  
   def up(self, p):
+    """Devuelve una nueva figura poniendo la figura recibida como argumento, encima de la figura actual"""
+
     return Picture(None)
 
   def under(self, p):
-    """ Devuelve una nueva figura poniendo la figura p sobre la
+    """ Devuelve una nueva figura poniendo la figura p  la
         figura actual """
     return Picture(None)
   
