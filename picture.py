@@ -38,7 +38,7 @@ class Picture:
       for caracter in value:
         row.append(self._invColor(caracter))
       nuevaImagen.append(row)    
-    return nuevaImagen
+    return Picture(nuevaImagen)
 
 
   def join(self, p):
