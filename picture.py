@@ -89,7 +89,10 @@ class Picture:
   def verticalRepeat(self, n):
     """Devuelve una nueva figura repitiendo la figura actual debajo, la cantidad
 de veces que indique el valor de n"""
-    return Picture(None)
+    aux = self
+    for _ in range(n-1):
+      aux = aux.up(self) 
+    return aux
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):

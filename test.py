@@ -13,6 +13,10 @@ img = Picture.join(img, king)
 img2 = pawn
 img2 = Picture.join(img2, pawn)
 
-draw(Picture.horizontalRepeat(rock, 4))
+tab = Picture.verticalRepeat(rock, 4)
+tab2 = Picture.verticalRepeat(rock, 4)
+
+
+draw(Picture.join(tab, tab2))
 
 
