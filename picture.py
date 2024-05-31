@@ -18,7 +18,7 @@ class Picture:
     for value in self.img:
       vertical.append(value[::-1])
 
-    return vertical
+    return Picture(vertical)
 
 
   def horizontalMirror(self):
@@ -27,7 +27,7 @@ class Picture:
     horizontal = []
     for value in reversed(self.img):
       horizontal.append(value[::1])
-    return horizontal
+    return Picture(horizontal)
 
 
   def negative(self):
@@ -44,11 +44,9 @@ class Picture:
   def join(self, p):
     """ Devuelve una nueva figura poniendo la figura del argumento p al lado derecho de la figura actual """
     nuevaImagen = []
-    index = 0
 
-    for value in self.img:
-      nuevaImagen.append(value + p.img[index])
-      index = index + 1
+    for index, value in enumerate(self.img):
+      nuevaImagen.append(list(value) + list(p.img[index]))
 
     return Picture(nuevaImagen)
   
