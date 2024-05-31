@@ -13,6 +13,6 @@ img = Picture.join(img, king)
 img2 = pawn
 img2 = Picture.join(img2, pawn)
 
-draw(Picture.up(img, img2))
+draw(Picture.under(img, img2))
 
 

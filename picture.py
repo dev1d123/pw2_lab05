@@ -63,11 +63,20 @@ class Picture:
       nuevaImagen.append(value[::1])
     return Picture(nuevaImagen)
 
+
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p  la
         figura actual """
-    return Picture(None)
-  
+    nuevaImagen = []
+    #copiar todo p a nueva imange
+    for value in self.img:
+      nuevaImagen.append(value[::1])
+    for value in p.img:
+      nuevaImagen.append(value[::1])
+    
+
+    return Picture(nuevaImagen)
+    
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado
         la cantidad de veces que indique el valor de n """
