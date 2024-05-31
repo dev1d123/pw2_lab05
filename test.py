@@ -16,7 +16,6 @@ img2 = Picture.join(img2, pawn)
 tab = Picture.verticalRepeat(rock, 4)
 tab2 = Picture.verticalRepeat(rock, 4)
 
-
-draw(Picture.join(tab, tab2))
+draw(Picture.rotate(rock))
 
 

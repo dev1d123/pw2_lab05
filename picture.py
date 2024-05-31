@@ -98,4 +98,38 @@ de veces que indique el valor de n"""
   def rotate(self):
     """Devuelve una figura rotada en 90 grados, puede ser en sentido horario
     o antihorario"""
-    return Picture(None)
+
+    """
+    00 01 02 03 0n
+    10 11 12 13 1n
+    20 21 22 23 2n 
+    30 31 32 33 3n
+    n0 n1 n2 n3 nn
+
+    n0 30 20 10 00
+    n1 31 21 11 01
+    n2 32 22 12 02
+    n3 33 23 13 03
+    nn 3n 2n 1n 0n
+
+    -> The index ij -> n - j, i
+    """
+
+    #generar la matriz de carateres original!
+    matrizOriginal = []
+    for value in self.img:
+      matrizOriginal.append(value)
+
+    #actualizamos cada valor en la matriz
+    size = len(matrizOriginal)
+    matrizRotate = [['' for _ in range(size)] for _ in range(size)]     #crea una matriz vacia!
+
+    print("El tamaño de esa matriz es: ", size)
+    for i in range(len(matrizOriginal)):
+      for j in range(len(matrizOriginal[i])):
+        print("Indices de rotate: ", size - j - 1, " y ", i)
+        print("Se accede al caracter: ", matrizRotate[size - j - 1][i])
+        matrizRotate[size - j - 1][i] =  matrizOriginal[i][j]
+
+
+    return Picture(matrizRotate)
