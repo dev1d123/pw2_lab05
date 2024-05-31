@@ -54,8 +54,14 @@ class Picture:
   
   def up(self, p):
     """Devuelve una nueva figura poniendo la figura recibida como argumento, encima de la figura actual"""
-
-    return Picture(None)
+    nuevaImagen = []
+    #copiar todo p a nueva imange
+    for value in p.img:
+      nuevaImagen.append(value[::1])
+    
+    for value in self.img:
+      nuevaImagen.append(value[::1])
+    return Picture(nuevaImagen)
 
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p  la
